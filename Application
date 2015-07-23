@@ -1,0 +1,34 @@
+import java.util.Scanner;
+
+public class YearApplication {
+	
+	public static void main(String[] args)//main method
+	{
+		int year;
+		Scanner input = new Scanner(System.in);
+		System.out.println("Enter a year: ");
+		year = input.nextInt();
+		if(year>= 1582){
+			if( Year.leapYear(year) == true){
+				System.out.println("This year is a leap year.");
+				System.out.println("The month of Easter " + Year.easterMon(year));
+				System.out.println("The day of Easter " + Year.easterDay(year));
+				Year.daysPerMonth(year, 1);
+				Year.daysPerMonth(year, 2);
+				Year.daysPerMonth(year, 8);
+			}
+			else{
+				System.out.println("This year is not a leap year.");
+				System.out.println("The month of Easter " + Year.easterMon(year));
+				System.out.println("The day of Easter " + Year.easterDay(year));
+				Year.daysPerMonth(year, 1);
+				Year.daysPerMonth(year, 2);
+				Year.daysPerMonth(year, 8);
+			}
+				
+			}
+		else{
+			System.out.println("You entered a year less than 1582");
+		}
+	}
+}
